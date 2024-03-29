@@ -1,0 +1,3 @@
+onBoot="npm install & npx --y @restatedev/restate-server"
+language = "typescript"
+run="npm run app-dev & npx --y @restatedev/restate dp reg localhost:9080"
