@@ -10,7 +10,9 @@
     "bundle": "esbuild src/app.ts --bundle --minify --sourcemap --platform=node --target=es2020 --outfile=dist/index.js",
     "postbundle": "cd dist && zip -r index.zip index.js*",
     "app": "node ./dist/app.js",
-    "app-dev": "ts-node-dev --watch ./src --respawn --transpile-only ./src/app.ts"
+    "app-dev": "ts-node-dev --watch ./src --respawn --transpile-only ./src/app.ts & restate dp reg localhost:9080",
+    "start-server": "restate-server",
+    "pm2-start-server": "pm2 start npm -- start-server"
   },
   "dependencies": {
     "@restatedev/restate-sdk": "^0.8.1"
@@ -18,6 +20,9 @@
   "devDependencies": {
     "esbuild": "^0.18.12",
     "ts-node-dev": "^1.1.1",
-    "typescript": "^5.0.2"
+    "typescript": "^5.0.2",
+    "pm2": "^4.5.0",
+    "@restatedev/restate-server": "^0.8.1",
+    "@restatedev/restate": "^0.8.1"
   }
 }
